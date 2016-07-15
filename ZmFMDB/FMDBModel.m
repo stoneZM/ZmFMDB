@@ -10,6 +10,7 @@
 
 @implementation FMDBModel
 
+//单例模式初始化一个数据库对象
 +(FMDatabase*)defaultFMDB{
 
     static FMDatabase* db = nil;
@@ -37,7 +38,6 @@
 }
 
 
-
 //插入数据
 -(void)insertData{
     FMDatabase* db = [FMDBModel defaultFMDB];
@@ -52,16 +52,49 @@
 
 }
 //查询数据
-
-
+-(NSArray*)search{
+    NSMutableArray* results = [NSMutableArray new];
+    FMDatabase* db = [FMDBModel defaultFMDB];
+    NSString* kind = [NSString stringWithFormat:@"%%%@%%",self.name];
+    FMResultSet* rs = [db executeQuery:@"SELECT * FROM t_student WHERE Name like ?",kind];
+    while ([rs next]) {
+        FMDBModel* model = [FMDBModel new];
+        model.sID = [[rs stringForColumn:@"SID"] integerValue];
+        model.name = [rs stringForColumn:@"Name"];
+        model.age = [[rs stringForColumn:@"Age"] integerValue];
+        model.sex = [rs stringForColumn:@"Sex"];
+        [results addObject:model];
+    }
+    [db closeOpenResultSets];
+    [db close];
+    return [results copy];
+}
 
 //删除数据
-
+-(void)remove{
+    FMDatabase* db = [FMDBModel defaultFMDB];
+    //根据sID删除数据
+   BOOL result = [db executeUpdate:@"DELETE FROM t_student WHERE SID=?",[NSNumber numberWithInteger:self.sID]];
+    if (result) {
+        DDLogVerbose(@"删除数据成功");
+    }else{
+        DDLogVerbose(@"删除数据失败");
+    }
+    [db close];
+}
 
 //更改数据
-
-
-
+-(void)update{
+    //根据sID更改数据
+    FMDatabase* db = [FMDBModel defaultFMDB];
+   BOOL result = [db executeUpdate:@"UPDATE t_student SET Age=? WHERE Name=?",[NSNumber numberWithInteger:self.age],self.name];
+    if (result) {
+        DDLogVerbose(@"更新数据成功");
+    }else{
+        DDLogVerbose(@"更新数据失败");
+    }
+    [db close];
+}
 
 //获取所有列表
 +(NSArray*)getAllList{
@@ -76,6 +109,8 @@
         model.sex = [rs stringForColumn:@"Sex"];
         [allList addObject:model];
     }
+    [db closeOpenResultSets];
+    [db close];
     return [allList copy];
 }
 

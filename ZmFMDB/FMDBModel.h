@@ -26,4 +26,10 @@
 
 +(FMDatabase*)defaultFMDB;
 
+-(NSArray*)search;
+
+-(void)remove;
+
+-(void)update;
+
 @end
