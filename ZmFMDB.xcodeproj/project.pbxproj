@@ -16,6 +16,10 @@
 		8E1C67021D374310002EDDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1C67001D374310002EDDCC /* LaunchScreen.storyboard */; };
 		8E1C670C1D374E72002EDDCC /* FMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1C670B1D374E72002EDDCC /* FMDBModel.m */; };
 		8E1C670E1D374F89002EDDCC /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1C670D1D374F89002EDDCC /* libsqlite3.0.tbd */; };
+		8EB6C6791D389A7E000028DC /* HandleFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB6C6781D389A7E000028DC /* HandleFMDB.m */; };
+		8EB6C67E1D39C05E000028DC /* AddRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB6C67D1D39C05E000028DC /* AddRecordViewController.xib */; };
+		8EB6C6841D39D0E6000028DC /* AddRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB6C6831D39D0E6000028DC /* AddRecordViewController.m */; };
+		8EFB187A1D39ED6E0029EB37 /* ShowResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB18791D39ED6E0029EB37 /* ShowResultController.m */; };
 		CD33EF3F1F6718E976EA6414 /* libPods-ZmFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E721042732439DA288275AB1 /* libPods-ZmFMDB.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,13 @@
 		8E1C670B1D374E72002EDDCC /* FMDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBModel.m; sourceTree = "<group>"; };
 		8E1C670D1D374F89002EDDCC /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		8E1C670F1D3752FD002EDDCC /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		8EB6C6771D389A7E000028DC /* HandleFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleFMDB.h; sourceTree = "<group>"; };
+		8EB6C6781D389A7E000028DC /* HandleFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleFMDB.m; sourceTree = "<group>"; };
+		8EB6C67D1D39C05E000028DC /* AddRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRecordViewController.xib; sourceTree = "<group>"; };
+		8EB6C6821D39D0E6000028DC /* AddRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecordViewController.h; sourceTree = "<group>"; };
+		8EB6C6831D39D0E6000028DC /* AddRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecordViewController.m; sourceTree = "<group>"; };
+		8EFB18781D39ED6E0029EB37 /* ShowResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowResultController.h; sourceTree = "<group>"; };
+		8EFB18791D39ED6E0029EB37 /* ShowResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultController.m; sourceTree = "<group>"; };
 		E721042732439DA288275AB1 /* libPods-ZmFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZmFMDB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,11 +106,10 @@
 			children = (
 				8E1C66F21D374310002EDDCC /* AppDelegate.h */,
 				8E1C66F31D374310002EDDCC /* AppDelegate.m */,
-				8E1C66F51D374310002EDDCC /* ViewController.h */,
-				8E1C66F61D374310002EDDCC /* ViewController.m */,
-				8E1C670A1D374E72002EDDCC /* FMDBModel.h */,
-				8E1C670B1D374E72002EDDCC /* FMDBModel.m */,
-				8E1C670F1D3752FD002EDDCC /* Constant.h */,
+				8EFB187E1D39FC360029EB37 /* others */,
+				8EFB187D1D39FC000029EB37 /* Controllers */,
+				8EFB187C1D39FBF80029EB37 /* ViewModel */,
+				8EFB187B1D39FBEB0029EB37 /* View */,
 				8E1C66EF1D374310002EDDCC /* Supporting Files */,
 			);
 			path = ZmFMDB;
@@ -108,15 +118,55 @@
 		8E1C66EF1D374310002EDDCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8E1C67091D3746CB002EDDCC /* PrefixHeader.pch */,
-				8E1C66F81D374310002EDDCC /* Main.storyboard */,
-				8E1C66FE1D374310002EDDCC /* Assets.xcassets */,
-				8E1C67001D374310002EDDCC /* LaunchScreen.storyboard */,
 				8E1C67031D374310002EDDCC /* Info.plist */,
 				8E1C66FB1D374310002EDDCC /* ZmFMDB.xcdatamodeld */,
 				8E1C66F01D374310002EDDCC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EFB187B1D39FBEB0029EB37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E1C670A1D374E72002EDDCC /* FMDBModel.h */,
+				8E1C670B1D374E72002EDDCC /* FMDBModel.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8EFB187C1D39FBF80029EB37 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8EB6C6771D389A7E000028DC /* HandleFMDB.h */,
+				8EB6C6781D389A7E000028DC /* HandleFMDB.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		8EFB187D1D39FC000029EB37 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E1C66F51D374310002EDDCC /* ViewController.h */,
+				8E1C66F61D374310002EDDCC /* ViewController.m */,
+				8EB6C6821D39D0E6000028DC /* AddRecordViewController.h */,
+				8EB6C6831D39D0E6000028DC /* AddRecordViewController.m */,
+				8EFB18781D39ED6E0029EB37 /* ShowResultController.h */,
+				8EFB18791D39ED6E0029EB37 /* ShowResultController.m */,
+				8EB6C67D1D39C05E000028DC /* AddRecordViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8EFB187E1D39FC360029EB37 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				8E1C670F1D3752FD002EDDCC /* Constant.h */,
+				8E1C67091D3746CB002EDDCC /* PrefixHeader.pch */,
+				8E1C66F81D374310002EDDCC /* Main.storyboard */,
+				8E1C66FE1D374310002EDDCC /* Assets.xcassets */,
+				8E1C67001D374310002EDDCC /* LaunchScreen.storyboard */,
+			);
+			name = others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +233,7 @@
 				8E1C67021D374310002EDDCC /* LaunchScreen.storyboard in Resources */,
 				8E1C66FF1D374310002EDDCC /* Assets.xcassets in Resources */,
 				8E1C66FA1D374310002EDDCC /* Main.storyboard in Resources */,
+				8EB6C67E1D39C05E000028DC /* AddRecordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +295,10 @@
 				8E1C66F71D374310002EDDCC /* ViewController.m in Sources */,
 				8E1C66F41D374310002EDDCC /* AppDelegate.m in Sources */,
 				8E1C66F11D374310002EDDCC /* main.m in Sources */,
+				8EB6C6841D39D0E6000028DC /* AddRecordViewController.m in Sources */,
 				8E1C66FD1D374310002EDDCC /* ZmFMDB.xcdatamodeld in Sources */,
+				8EFB187A1D39ED6E0029EB37 /* ShowResultController.m in Sources */,
+				8EB6C6791D389A7E000028DC /* HandleFMDB.m in Sources */,
 				8E1C670C1D374E72002EDDCC /* FMDBModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

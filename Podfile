@@ -9,4 +9,6 @@ target 'ZmFMDB' do
   pod 'FMDB'
   pod 'Masonry'
   pod 'CocoaLumberjack', '~> 2.0.0-beta4'
+  pod 'MBProgressHUD', '~> 0.9.2'
+
 end

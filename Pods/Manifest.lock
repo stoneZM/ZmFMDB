@@ -11,17 +11,20 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - Masonry (1.0.1)
+  - MBProgressHUD (0.9.2)
 
 DEPENDENCIES:
   - CocoaLumberjack (~> 2.0.0-beta4)
   - FMDB
   - Masonry
+  - MBProgressHUD (~> 0.9.2)
 
 SPEC CHECKSUMS:
   CocoaLumberjack: f58d8a19629f4d8379ae14bb3534def24161430e
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
 
-PODFILE CHECKSUM: 3f223f96b3523cab790e1b4bc7824722db249081
+PODFILE CHECKSUM: 6baec905867cbb9f5bf9d8f2eb8a8b5862283ae4
 
 COCOAPODS: 1.0.0

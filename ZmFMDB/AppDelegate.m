@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FMDBModel.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,16 +17,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //  注册DDLog 取代 NSLog
-    [DDLog addLogger:[DDASLLogger sharedInstance]];
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+
+    [self launch];
 
     FMDatabase* db = [FMDBModel defaultFMDB];
     DDLogVerbose(@"%@",db.databasePath);
 
     return YES;
 }
+
+-(void)launch{
+    //  注册DDLog 取代 NSLog
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[ViewController new]];
+    [self.window makeKeyAndVisible];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
